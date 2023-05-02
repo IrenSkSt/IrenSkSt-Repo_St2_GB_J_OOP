@@ -15,6 +15,7 @@ public class Product {
         this.name = nameProduct;
         this.Brand = BrandProduct;
         this.price = priceProduct;
+
     }
 
     public Product(Brand BrandProduct, Double priceProduct) {
@@ -26,34 +27,34 @@ public class Product {
         this(hw.hw_1.support.Brand.NoName, 1.00);
     }
 
-    public String getName() {
-        return name;
-    }
+    // public String getName() {
+    // return name;
+    // }
 
-    protected void setName(String name) {
-        this.name = name;
-    }
+    // protected void setName(String name) {
+    // this.name = name;
+    // }
 
-    public String getBrand() {
-        return Brand;
-    }
+    // public String getBrand() {
+    // return Brand;
+    // }
 
-    protected void setBrand(String brand) {
-        Brand = brand;
-    }
+    // protected void setBrand(String brand) {
+    // Brand = brand;
+    // }
 
-    public Double getPrice() {
-        return price;
-    }
+    // public Double getPrice() {
+    // return price;
+    // }
 
-    protected void setPrice(Double price) {
-        this.price = price;
-    }
+    // protected void setPrice(Double price) {
+    // this.price = price;
+    // }
 
     @Override
     public String toString() {
 
-        return String.format("%s %s - %.2f руб.", name, Brand, price);
+        return String.format("%s %s         \tцена: %.2f руб.", name, Brand, price);
     }
 
 }
