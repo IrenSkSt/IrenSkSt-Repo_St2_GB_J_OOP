@@ -12,9 +12,20 @@ public class Product {
     }
 
     public Product(String nameProduct, Brand BrandProduct, Double priceProduct) {
-        this.name = nameProduct;
+
         this.Brand = BrandProduct;
-        this.price = priceProduct;
+
+        if (nameProduct.length() < 3)
+            this.name = "Напиток";
+        else if (nameProduct.length() > 20)
+            this.name = nameProduct.substring(0, 20);
+        else
+            this.name = nameProduct;
+
+        if (priceProduct <= 0.00)
+            throw new RuntimeException("Некорректная цена за единицу товара.");
+        else
+            this.price = priceProduct;
 
     }
 

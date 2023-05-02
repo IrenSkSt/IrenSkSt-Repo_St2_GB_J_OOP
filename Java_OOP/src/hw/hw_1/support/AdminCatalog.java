@@ -22,7 +22,7 @@ public class AdminCatalog {
             throw new RuntimeException("Нет товаров для загрузки в аппарат.");
         else {
             VendingMachine vendingMachine1 = new VendingMachine(catalog);
-            System.out.println(vendingMachine1.getProducts()); // для проверки
+            // System.out.println(vendingMachine1.getProducts()); // для проверки
             System.out.println("Количество позиций товара в аппарате: " + vendingMachine1.getProducts().size());
         }
     }
@@ -39,10 +39,25 @@ public class AdminCatalog {
     }
 
     public static void addProductsToCatalog() {
-        // Product product1Test = new Product();
-        // catalog.add(product1Test);
-        // Product product2Test = new Product(Brand.Cola, 30.0);
-        // catalog.add(product2Test);
+
+        // -------------
+        // Product productTest = new Product(Brand.Cola, -20.0); // для проверки
+        // catalog.add(productTest); // для проверки
+        // System.out.println(productTest); // для проверки
+
+        // Product product1Test = new Product(); // для проверки
+        // catalog.add(product1Test); // для проверки
+        // Product product2Test = new Product(Brand.Cola, 30.0);// для проверки
+        // catalog.add(product2Test); // для проверки
+        // Product product3Test = new Product("n", Brand.Cola, 30.0);// для проверки //
+        // проверки
+        // System.out.println(product3Test.name.length());
+        // catalog.add(product3Test); // для проверки
+
+        // System.out.println(product1Test); // для проверки
+        // System.out.println(product2Test); // для проверки
+        // System.out.println(product3Test); // для проверки
+        // -------------
 
         Product product3 = new Drink(Brand.Cola, 30.55, Tare.bottle);
         catalog.add(product3);
@@ -57,8 +72,6 @@ public class AdminCatalog {
         Product product8 = new Drink(Brand.Pepsi, 43.35, Tare.can);
         catalog.add(product8);
 
-        // System.out.println(product1Test); // для проверки
-        // System.out.println(product2Test); // для проверки
         // System.out.println(product3); // для проверки
         // System.out.println(catalog); // для проверки
 

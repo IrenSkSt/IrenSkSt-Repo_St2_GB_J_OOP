@@ -6,6 +6,7 @@ import hw.hw_1.support.Product;
 
 /**
  * VendingMachine -Аппарат для продажи продуктов
+ * на примере напитков
  */
 public class VendingMachine {
     private final List<Product> products;
