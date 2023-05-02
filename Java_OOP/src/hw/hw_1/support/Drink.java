@@ -9,6 +9,7 @@ public class Drink extends Product {
 
     public Drink(Brand BrandProduct, Double priceProduct, Tare tareProduct) {
         super(BrandProduct, priceProduct);
+        this.name = "Напиток газированный";
         this.Tare = tareProduct;
     }
 
