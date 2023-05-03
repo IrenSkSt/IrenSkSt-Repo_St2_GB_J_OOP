@@ -7,6 +7,7 @@ import hw.hw_1.VendingMachine;
 
 public class AdminCatalog {
     private static final List<Product> catalog = new ArrayList<>();
+    public static VendingMachine vendingMachine1;
 
     public static void createCatalog() {
 
@@ -21,7 +22,7 @@ public class AdminCatalog {
         if (catalog.size() == 0)
             throw new RuntimeException("Нет товаров для загрузки в аппарат.");
         else {
-            VendingMachine vendingMachine1 = new VendingMachine(catalog);
+            vendingMachine1 = new VendingMachine(catalog);
             // System.out.println(vendingMachine1.getProducts()); // для проверки
             System.out.println("Количество позиций товара в аппарате: " + vendingMachine1.getProducts().size());
         }
