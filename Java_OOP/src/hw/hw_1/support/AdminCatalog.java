@@ -26,6 +26,7 @@ public class AdminCatalog {
             // System.out.println(vendingMachine1.getProducts()); // для проверки
             System.out.println("Количество позиций товара в аппарате: " + vendingMachine1.getProducts().size());
         }
+        System.out.println();
     }
 
     private static void showProdactsCatalog() {

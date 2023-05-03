@@ -25,6 +25,11 @@ public class VendingMachine {
         this.products = products;
     }
 
+    public Boolean getIsReadyMachine() {
+        // System.out.println(this.products.size()); // для проверки
+        return this.products.size() != 0;
+    }
+
     /**
      * Покупка товара по номеру товарной позиции в аппарате
      * 
@@ -62,6 +67,33 @@ public class VendingMachine {
             }
         }
         return null;
+
+    }
+
+    /**
+     * Показать список товаров(наптков) брэнда, заданного покупателем
+     * 
+     * @param brand - имя брэнда
+     *              pos - номер позиции товара для быстрой покупки по номеру
+     */
+    public void showBrandProducts(String brand) {
+        System.out.println("Вы искали товары брэнда: " + brand);
+
+        Iterator iterator = this.products.iterator();
+        int count = 0;
+        while (iterator.hasNext()) {
+            Product product = (Product) iterator.next();
+            if (product.getBrand().toString().equals(brand)) {
+                int pos = this.products.indexOf(product) + 1;
+                System.out.println(pos + "  " + product);
+                count++;
+            }
+
+        }
+        if (count == 0)
+            System.out.println("Таких товаров не найдено");
+        else
+            System.out.printf("Всего найдено похожих товаров : %d \n", count);
 
     }
 }
