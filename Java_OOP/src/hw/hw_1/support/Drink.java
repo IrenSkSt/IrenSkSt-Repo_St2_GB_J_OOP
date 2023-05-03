@@ -13,7 +13,7 @@ public class Drink extends Product {
      * @return - тип тары
      */
     public Tare getTare() {
-        return Tare;
+        return this.Tare;
     }
 
     public Drink(Brand BrandProduct, Double priceProduct, Tare tareProduct) {

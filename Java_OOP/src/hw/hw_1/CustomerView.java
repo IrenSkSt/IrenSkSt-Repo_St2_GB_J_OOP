@@ -8,6 +8,8 @@ import hw.hw_1.support.Tare;
 
 public class CustomerView {
 
+    public static Product resultBuyProduct;
+
     public static void buyProduct() {
 
         AdminCatalog.createCatalog();
@@ -22,18 +24,25 @@ public class CustomerView {
         // System.out.println(vendingMachineNow.getProducts().size()); // для проверки
         // System.out.println(resultBuyProduct0); // для проверки
 
-        Product resultBuyProduct;
-        resultBuyProduct = vendingMachineNow.getOutProduct(2);
+        /**
+         * Имитация покупок по одному товару
+         */
+        resultBuyProduct = vendingMachineNow.getOutPosProduct(2);
+        showBuyResult(resultBuyProduct);
         // System.out.println(resultBuyProduct); // для проверки
-        resultBuyProduct = vendingMachineNow.getOutProduct(6);
+        resultBuyProduct = vendingMachineNow.getOutPosProduct(6);
+        showBuyResult(resultBuyProduct);
         // System.out.println(resultBuyProduct); // для проверки
 
-        // Product resultBuyProduct1 = VendingMachine.getProduct(Brand.Cola,
-        // Tare.bottle);
+        resultBuyProduct = vendingMachineNow.getOutProduct(Brand.Cola, Tare.can);
+        showBuyResult(resultBuyProduct);
 
-        if (resultBuyProduct == null)
+    }
+
+    private static void showBuyResult(Product res) {
+        if (res == null)
             System.out.println("Такого продукта нет.");
         else
-            System.out.println("\nВы купили: \n" + resultBuyProduct);
+            System.out.println("\nВы купили: \n  " + res);
     }
 }

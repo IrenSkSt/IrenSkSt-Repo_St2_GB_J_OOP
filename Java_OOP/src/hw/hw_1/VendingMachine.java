@@ -32,7 +32,7 @@ public class VendingMachine {
      * @return - товар на выдачу (возвращаем товар из списка по выбранной позиции)
      */
     // !!! при реализации запроса выбора юзера сделать вариант по позиции
-    public Product getOutProduct(int i) {
+    public Product getOutPosProduct(int i) {
 
         if (i > 0 && i < this.products.size() + 1) {
 
@@ -45,14 +45,16 @@ public class VendingMachine {
         return null;
     }
 
-    // public Product getProduct(Brand brand, Tare tare) {
-    // Iterator iterator = this.products.iterator();
-    // while (iterator.hasNext()) {
-    // Product product = (Product) iterator.next();
-    // System.out.println(product);
+    public Product getOutProduct(Brand brand, Tare tare) {
+        Iterator iterator = this.products.iterator();
+        while (iterator.hasNext()) {
+            Product product = (Product) iterator.next();
+            if (product.getBrand().equals(brand) && product.getTare().equals(tare)) {
+                // System.out.println(product.getBrand()); // для проверки
+                return product;
+            }
+        }
+        return null;
 
-    // }
-    // return null;
-
-    // }
+    }
 }

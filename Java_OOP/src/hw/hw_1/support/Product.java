@@ -1,5 +1,7 @@
 package hw.hw_1.support;
 
+import hw.hw_1.support.Brand;
+
 public class Product {
     protected String name;
     protected Brand Brand;
@@ -46,9 +48,9 @@ public class Product {
     // this.name = name;
     // }
 
-    // public String getBrand() {
-    // return Brand;
-    // }
+    public Brand getBrand() {
+        return Brand;
+    }
 
     // protected void setBrand(String brand) {
     // Brand = brand;
@@ -66,6 +68,10 @@ public class Product {
     public String toString() {
 
         return String.format("%s %s         \tцена: %.2f руб.", name, Brand, price);
+    }
+
+    public Object getTare() {
+        return null;
     }
 
 }
