@@ -26,15 +26,22 @@ public class CustomerView {
 
         /**
          * Имитация покупок по одному товару
+         * вариант 1 - по номеру товара (так сейчас реализованы вендингАппараты в
+         * реальности) = в идеале надо по ID товарной позиции
+         * вариант2 - выбирает брэнд и тару (сейчас только напитки в аппарате) = аналог
+         * когда кнопка или галочка, т.е. выбор из фиксированного набора
          */
-        resultBuyProduct = vendingMachineNow.getOutPosProduct(2);
+        resultBuyProduct = vendingMachineNow.getOutPosProduct(2); // 1 вариант
         showBuyResult(resultBuyProduct);
         // System.out.println(resultBuyProduct); // для проверки
         resultBuyProduct = vendingMachineNow.getOutPosProduct(6);
         showBuyResult(resultBuyProduct);
         // System.out.println(resultBuyProduct); // для проверки
 
-        resultBuyProduct = vendingMachineNow.getOutProduct(Brand.Cola, Tare.can);
+        resultBuyProduct = vendingMachineNow.getOutProduct(Brand.Cola, Tare.can); // 2 вариант
+        showBuyResult(resultBuyProduct);
+
+        resultBuyProduct = vendingMachineNow.getOutProduct(Brand.Fanta, Tare.bottle);
         showBuyResult(resultBuyProduct);
 
     }

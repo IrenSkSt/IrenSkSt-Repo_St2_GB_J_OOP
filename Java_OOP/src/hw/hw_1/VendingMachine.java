@@ -45,6 +45,13 @@ public class VendingMachine {
         return null;
     }
 
+    /**
+     * Покупка товара по брэнду и таре (в аппарате только одно товарная группа)
+     * 
+     * @param brand - брэнд газированного напитка
+     * @param tare  - тара (бутылка или банка)
+     * @return - товар на выдачу (возвращаем товар из списка товаров в аппарате)
+     */
     public Product getOutProduct(Brand brand, Tare tare) {
         Iterator iterator = this.products.iterator();
         while (iterator.hasNext()) {
