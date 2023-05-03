@@ -14,8 +14,9 @@ public class CustomerView {
 
         AdminCatalog.createCatalog();
 
-        // Boolean readyMachine = AdminCatalog.vendingMachine1.getIsReadyMachine();
-        // System.out.println(readyMachine);
+        // Boolean readyMachine = AdminCatalog.vendingMachine1.getIsReadyMachine(); //
+        // для проверки
+        // System.out.println(readyMachine); // для проверки
         if (AdminCatalog.vendingMachine1.getIsReadyMachine())
             buyOneProduct();
         else
@@ -58,7 +59,7 @@ public class CustomerView {
 
     private static void showBuyResult(Product res) {
         if (res == null)
-            System.out.println("Такого продукта нет.");
+            System.out.println("Такого продукта нет.\n");
         else
             System.out.println("\nВы купили: \n   " + res);
     }

@@ -91,7 +91,7 @@ public class VendingMachine {
 
         }
         if (count == 0)
-            System.out.println("Таких товаров не найдено");
+            System.out.println("Таких товаров не найдено \n");
         else
             System.out.printf("Всего найдено похожих товаров : %d \n", count);
 
