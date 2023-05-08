@@ -6,8 +6,8 @@ package hw.hw_2;
 public class Cat implements FeedPet {
     private String name;
     private int appetite;
-    private String hungry="голодный";
-    
+    private String hungry = "голодный";
+
     public String getHungry() {
         return hungry;
     }
@@ -28,13 +28,14 @@ public class Cat implements FeedPet {
         this.name = name;
         this.appetite = appetite;
     }
-    
+
     // public void eat() {
-        
+
     // }
 
     // для нулевого варианта
     // void infoDoCat() {
-    //     System.out.printf("Cat %s is eating\n", name);
+    // System.out.printf("Cat %s is eating\n", name);
     // }
+
 }
