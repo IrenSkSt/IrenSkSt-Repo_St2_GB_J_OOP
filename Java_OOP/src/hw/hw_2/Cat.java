@@ -3,10 +3,19 @@ package hw.hw_2;
 /**
  * Cat
  */
-public class Cat {
+public class Cat implements FeedPet {
     private String name;
     private int appetite;
+    private String hungry="голодный";
     
+    public String getHungry() {
+        return hungry;
+    }
+
+    public void setHungry(String hungry) {
+        this.hungry = hungry;
+    }
+
     public String getName() {
         return name;
     }
@@ -20,11 +29,12 @@ public class Cat {
         this.appetite = appetite;
     }
     
-    public void eat() {
+    // public void eat() {
+        
+    // }
 
-    }
-
-    void infoDoCat() {
-        System.out.printf("Cat %s is eating\n", name);
-    }
+    // для нулевого варианта
+    // void infoDoCat() {
+    //     System.out.printf("Cat %s is eating\n", name);
+    // }
 }

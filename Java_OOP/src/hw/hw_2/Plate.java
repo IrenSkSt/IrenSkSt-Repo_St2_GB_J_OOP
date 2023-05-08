@@ -9,6 +9,7 @@ public class Plate {
     }
 
     public void setFood(int food) {
+        
         this.food = food;
     }
 
@@ -17,7 +18,8 @@ public class Plate {
     }
 
     public Plate(int food) {
-        this.food = food;
+        if(food<0) throw new RuntimeException("Отрицательное значение еды!");
+        else this.food = food;
     }
 
     public void info () {
