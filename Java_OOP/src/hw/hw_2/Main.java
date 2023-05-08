@@ -21,19 +21,23 @@ public class Main {
         Plate plate1 = new Plate(10);
 
         plate1.info();
-        cat1.eat(plate1.getFood());
+        cat1.eat(plate1);
+        // plate1.info(); // для проверки
+        // cat1.eat(50); // для проверки
+        // plate1.info(); // для проверки
+        // cat1.eat(5); // для проверки
+        plate1.AddFoodAuto(cat1);
         plate1.info();
-        cat1.eat(50); // для проверки
-        plate1.info(); // для проверки
-        cat1.eat(5);
+        cat1.eat(plate1);
         System.out.println();
 
+        // задание 1-2 в варианте 1 кот = 1 тарелка
         Cat cat2 = new Cat("Пушок", 8);
         Plate plate2 = new Plate(10);
         plate2.info();
-        cat2.eat(plate2.getFood());
+        cat2.eat(plate2);
         plate2.info();
-        cat2.eat(plate2.getFood());
+        cat2.eat(plate2); // для проверки
 
     }
 }

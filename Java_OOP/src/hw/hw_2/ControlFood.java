@@ -3,13 +3,17 @@ package hw.hw_2;
 public interface ControlFood {
     int getFood();
 
-    void setAdditive(int additive);
+    void setFood(int food);
 
-    default boolean AddFoodAuto(String hungry, int appetite) {
+    // void setAdditive(int additive);
 
-        if (hungry.equals("голодный")) {
-            this.setAdditive(appetite - this.getFood());
-            System.out.printf("Положили добавку в тарелку %d единиц еды. \n", (appetite - this.getFood()));
+    default boolean AddFoodAuto(Cat cat) {
+
+        int additive = cat.getAppetite() - this.getFood();
+        if (cat.getHungry().equals("голодный")) {
+            // this.setAdditive(additive);
+            this.setFood(this.getFood() + additive);
+            System.out.printf("Положили добавку в тарелку %d единиц еды. \n", (additive));
             return true;
         }
         return false;

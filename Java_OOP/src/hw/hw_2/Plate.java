@@ -3,15 +3,24 @@ package hw.hw_2;
 public class Plate implements ControlFood {
 
     private int food;
-    private int additive = 0;
+    public static Integer count;
 
-    public int getAdditive() {
-        return additive;
+    static {
+        count = 1;
     }
 
-    public void setAdditive(int additive) {
-        this.additive = +additive;
-    }
+    // additive - для вариаций действий хозяина питомца =пока не реализовано
+    // пока сделано автоматическое пополнение тарелки кормом, чтобы накормить
+    // питомца
+    // private int additive = 0;
+
+    // public int getAdditive() {
+    // return additive;
+    // }
+
+    // public void setAdditive(int additive) {
+    // this.additive = +additive;
+    // }
 
     public int getFood() {
         return food;
@@ -24,16 +33,19 @@ public class Plate implements ControlFood {
 
     public Plate() {
         this.food = 20;
+        count++;
     }
 
     public Plate(int food) {
         if (food < 0)
             throw new RuntimeException("Отрицательное значение еды!");
-        else
+        else {
             this.food = food;
+            count++;
+        }
     }
 
     public void info() {
-        System.out.println("Plate: " + food);
+        System.out.printf("Тарелка %d: %d единиц еды \n", count, food);
     }
 }
