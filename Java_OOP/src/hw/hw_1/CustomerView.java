@@ -14,15 +14,27 @@ public class CustomerView {
 
         AdminCatalog.createCatalog();
 
+        // Boolean readyMachine = AdminCatalog.vendingMachine1.getIsReadyMachine(); //
+        // для проверки
+        // System.out.println(readyMachine); // для проверки
+        if (AdminCatalog.vendingMachine1.getIsReadyMachine())
+            buyOneProduct();
+        else
+            System.out.println("В аппарате нет товаров");
+
+    }
+
+    private static void buyOneProduct() {
         /**
          * Покупка товара по номеру товарной позиции в аппарате
          */
         VendingMachine vendingMachineNow = AdminCatalog.vendingMachine1;
-
         // Drink resultBuyProduct0 = (Drink) vendingMachineNow.getOutProduct(3); // для
         // проверки
         // System.out.println(vendingMachineNow.getProducts().size()); // для проверки
         // System.out.println(resultBuyProduct0); // для проверки
+
+        vendingMachineNow.showBrandProducts("Cola"); // показать товары по брэнду
 
         /**
          * Имитация покупок по одному товару
@@ -43,13 +55,12 @@ public class CustomerView {
 
         resultBuyProduct = vendingMachineNow.getOutProduct(Brand.Fanta, Tare.bottle);
         showBuyResult(resultBuyProduct);
-
     }
 
     private static void showBuyResult(Product res) {
         if (res == null)
-            System.out.println("Такого продукта нет.");
+            System.out.println("Такого продукта нет.\n");
         else
-            System.out.println("\nВы купили: \n  " + res);
+            System.out.println("\nВы купили: \n   " + res);
     }
 }
