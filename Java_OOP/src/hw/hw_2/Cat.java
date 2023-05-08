@@ -1,7 +1,13 @@
 package hw.hw_2;
 
 /**
- * Cat
+ * Cat - шаблон типового питомца типа Кот
+ * 
+ * @parame name - имя кота
+ * @parame appetite - показатель потребления котиков еды за один раз (норма
+ *         потребления)
+ * @parame hungry - индикатор готовности к приему пищи - имеет два значения:
+ *         "голодный"/"сытый"
  */
 public class Cat implements FeedPet {
     private String name;

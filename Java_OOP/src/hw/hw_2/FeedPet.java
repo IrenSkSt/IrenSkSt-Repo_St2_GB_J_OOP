@@ -1,5 +1,9 @@
 package hw.hw_2;
 
+/**
+ * FeedPet - шаблон операции приема пищи котиком из миски (кормлени питомца)
+ * 
+ */
 public interface FeedPet {
 
     String getName();

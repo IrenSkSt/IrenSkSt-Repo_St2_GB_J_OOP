@@ -1,11 +1,14 @@
 package hw.hw_2;
 
+/**
+ * ControlFood - шаблон автоматической операции добавки корма в миску по норме
+ * потребления питомца
+ * 
+ */
 public interface ControlFood {
     int getFood();
 
     void setFood(int food);
-
-    // void setAdditive(int additive);
 
     default boolean AddFoodAuto(Cat cat) {
         if (cat.getHungry().equals("голодный") && this.getFood() < cat.getAppetite()) {

@@ -1,5 +1,13 @@
 package hw.hw_2;
 
+/**
+ * Plate - шаблон миски для приема пищи котом
+ * 
+ * @parame food - количество еды в миске
+ * @parame maxFood - ограничение количества еды по объему, вмещающемуся в миску
+ *         (вместимость миски)
+ * @parame count - счетчик создаваемых мисок (1 место кормления)
+ */
 public class Plate implements ControlFood {
 
     private int food;
@@ -9,19 +17,6 @@ public class Plate implements ControlFood {
     static {
         count = 1;
     }
-
-    // additive - для вариаций действий хозяина питомца =пока не реализовано
-    // пока сделано автоматическое пополнение тарелки кормом, чтобы накормить
-    // питомца
-    // private int additive = 0;
-
-    // public int getAdditive() {
-    // return additive;
-    // }
-
-    // public void setAdditive(int additive) {
-    // this.additive = +additive;
-    // }
 
     public int getFood() {
         return food;
@@ -56,6 +51,11 @@ public class Plate implements ControlFood {
         }
     }
 
+    /**
+     * addFood предназначен для добавление еды пользователем
+     * 
+     * @param food - колво добавки еды в миску, но не более вместимости миски
+     */
     public void addFood(int food) {
         if (food < 0)
             throw new RuntimeException("Отрицательное значение еды!");
