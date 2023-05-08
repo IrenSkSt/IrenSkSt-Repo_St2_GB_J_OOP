@@ -3,6 +3,7 @@ package hw.hw_2;
 public class Plate implements ControlFood {
 
     private int food;
+    private int maxFood = 50;
     public static Integer count;
 
     static {
@@ -27,8 +28,14 @@ public class Plate implements ControlFood {
     }
 
     public void setFood(int food) {
+        if (food < 0)
+            throw new RuntimeException("Отрицательное значение еды!");
+        if (food > maxFood) {
+            this.food = maxFood;
+            System.out.printf("Миска вмещает только %d единиц еды, остальное не доступно питомцу.", maxFood);
 
-        this.food = food;
+        } else
+            this.food = food;
     }
 
     public Plate() {
@@ -39,9 +46,26 @@ public class Plate implements ControlFood {
     public Plate(int food) {
         if (food < 0)
             throw new RuntimeException("Отрицательное значение еды!");
-        else {
+        if (food > maxFood) {
+            this.food = maxFood;
+            System.out.printf("Миска вмещает только %d единиц еды, остальное не доступно питомцу.", maxFood);
+            count++;
+        } else {
             this.food = food;
             count++;
+        }
+    }
+
+    public void addFood(int food) {
+        if (food < 0)
+            throw new RuntimeException("Отрицательное значение еды!");
+        if (food > maxFood) {
+            this.food = maxFood;
+            System.out.printf("Миска вмещает только %d единиц еды, остальное не доступно питомцу.", maxFood);
+
+        } else {
+            System.out.printf("Вы добавили в миску %d единиц еды \n", food);
+            this.food = this.getFood() + food;
         }
     }
 

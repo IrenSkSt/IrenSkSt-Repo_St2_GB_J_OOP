@@ -8,13 +8,16 @@ public interface ControlFood {
     // void setAdditive(int additive);
 
     default boolean AddFoodAuto(Cat cat) {
-
-        int additive = cat.getAppetite() - this.getFood();
-        if (cat.getHungry().equals("голодный")) {
-            // this.setAdditive(additive);
-            this.setFood(this.getFood() + additive);
-            System.out.printf("Положили добавку в тарелку %d единиц еды. \n", (additive));
-            return true;
+        if (cat.getHungry().equals("голодный") && this.getFood() < cat.getAppetite()) {
+            int additive = cat.getAppetite() - this.getFood();
+            if (cat.getHungry().equals("голодный")) {
+                // this.setAdditive(additive);
+                this.setFood(this.getFood() + additive);
+                System.out.printf("Аппарат положил добавку в тарелку %d единиц еды, чтобы накормить кота %s. \n",
+                        additive,
+                        cat.getName());
+                return true;
+            }
         }
         return false;
 

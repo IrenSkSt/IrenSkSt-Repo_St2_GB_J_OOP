@@ -17,10 +17,14 @@ public interface FeedPet {
             return false;
         } else {
             if (food > 0 && food >= this.getAppetite()) {
-                this.setHungry("сытый");
-                plate.setFood(food - this.getAppetite());
+
                 System.out.printf("Кот %s съел %d единиц еды. ", this.getName(), this.getAppetite());
+                this.setHungry("сытый");
                 System.out.printf("Кот %s %s. \n", this.getName(), this.getHungry());
+
+                plate.setFood((food - this.getAppetite()));
+                // System.out.println(plate.getFood()); // для проверки
+
                 return true;
             } else {
 

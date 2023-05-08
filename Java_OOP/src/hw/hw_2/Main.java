@@ -24,10 +24,13 @@ public class Main {
         cat1.eat(plate1);
         // plate1.info(); // для проверки
         // cat1.eat(50); // для проверки
+        // plate1.setFood(150); // для проверки
         // plate1.info(); // для проверки
         // cat1.eat(5); // для проверки
-        plate1.AddFoodAuto(cat1);
+        plate1.addFood(3);
         plate1.info();
+        plate1.AddFoodAuto(cat1);
+        plate1.info(); // для проверки
         cat1.eat(plate1);
         System.out.println();
 
@@ -37,7 +40,42 @@ public class Main {
         plate2.info();
         cat2.eat(plate2);
         plate2.info();
-        cat2.eat(plate2); // для проверки
+        // cat2.eat(plate2); // для проверки
+
+        System.out.println("-------------------------------------");
+        // задание 1-4 = вариант несколько кошек - 1 тарелка на всех
+        // питомцы по очередности допускаются к миске
+        Cat[] cats = {
+                new Cat("Симбо", 7),
+                new Cat("Рыжик", 10),
+                new Cat("Барон", 15) };
+
+        Plate plate = new Plate(10);
+
+        System.out.println("\nОтчет по выдаче корма питомцам: ");
+        plate.info();
+        for (int i = 0; i < cats.length; i++) {
+            while (cats[i].getHungry() == "голодный") {
+                for (Cat cat : cats) {
+                    if (cat.getHungry().equals("голодный"))
+                        cat.eat(plate);
+                }
+                System.out.println();
+                plate.info();
+                if (i < cats.length - 1)
+                    plate.addFood(5);
+
+            }
+            if (i < cats.length - 1)
+                plate.AddFoodAuto(cats[i + 1]);
+        }
+
+        // for (Cat cat : cats) {
+        // if (cat.getHungry().equals("голодный"))
+        // cat.eat(plate);
+
+        // plate.info();
+        // }
 
     }
 }
