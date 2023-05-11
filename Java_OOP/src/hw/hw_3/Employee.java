@@ -30,8 +30,13 @@ abstract class Employee {
      * Счетчик работников
      */
     private static int count;
+
     {
         count++;
+    }
+
+    public static int getCount() {
+        return count;
     }
 
     /**
@@ -55,7 +60,7 @@ abstract class Employee {
     @Override
     public String toString() {
 
-        return String.format("%d: %s %s   \t ставка ЗП = %.2f руб/мес.\n", count, surName, firstName, salary);
+        return String.format("%d: %s %s   \t\t ставка ЗП = %.2f тыс.руб/мес.\n", count, surName, firstName, salary);
     }
 
 }

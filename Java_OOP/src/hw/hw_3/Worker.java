@@ -31,7 +31,7 @@ class Worker extends Employee {
     @Override
     public String toString() {
 
-        return String.format("%s %s \t (%s)\t ставка ЗП = %.2f руб/мес.\tСр.месячная ЗП =%.2f руб/мес.\n",
+        return String.format("%s %s \t\t (%s)\t ставка ЗП = %.2f тыс.руб/мес. \tСр.месячная ЗП =%.2f руб/мес.\n",
                 surName, firstName, contract,
                 salary, calculateMonthSalary());
     }
