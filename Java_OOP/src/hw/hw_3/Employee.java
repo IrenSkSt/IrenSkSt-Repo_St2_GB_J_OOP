@@ -1,5 +1,11 @@
+
 package hw.hw_3;
 
+/**
+ * !!! Допущение в рамках задачи = (по умолчанию) работник отработал
+ * ВСЕ рабочие дни в месяце = 20 рабочих дней
+ * без реализации иных вариантов
+ */
 abstract class Employee {
 
     /**
@@ -19,6 +25,10 @@ abstract class Employee {
      * ставка (зарплата) за месяц
      */
     protected double salary;
+
+    /**
+     * Счетчик работников
+     */
     private static int count;
     {
         count++;
@@ -37,10 +47,15 @@ abstract class Employee {
         this.salary = salary;
     }
 
+    /**
+     * Расчет среднемесячной ЗП
+     */
+    protected abstract double calculateMonthSalary();
+
     @Override
     public String toString() {
 
-        return String.format("Работник %d: %s %s ставка ЗП = %.2f руб/мес.\n", count, surName, firstName, salary);
+        return String.format("%d: %s %s   \t ставка ЗП = %.2f руб/мес.\n", count, surName, firstName, salary);
     }
 
 }

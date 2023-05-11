@@ -1,7 +1,16 @@
+
 package hw.hw_3;
 
+/**
+ * !!! Допущение в рамках задачи = (по умолчанию) работник отработал
+ * ВСЕ рабочие дни в месяце = 22 рабочих дня по норме (8ч в день)
+ * без реализации иных вариантов
+ */
 class Worker extends Employee {
 
+    /**
+     * Счетчик работников на FullTime
+     */
     private static int count;
 
     {
@@ -15,10 +24,16 @@ class Worker extends Employee {
     }
 
     @Override
+    protected double calculateMonthSalary() {
+        return salary;
+    }
+
+    @Override
     public String toString() {
 
-        return String.format("Работник: %s %s   \t (%s) ставка ЗП = %.2f руб/мес.\n", surName, firstName, contract,
-                salary);
+        return String.format("%s %s \t (%s)\t ставка ЗП = %.2f руб/мес.\tСр.месячная ЗП =%.2f руб/мес.\n",
+                surName, firstName, contract,
+                salary, calculateMonthSalary());
     }
 
 }
