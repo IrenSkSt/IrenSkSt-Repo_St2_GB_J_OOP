@@ -62,10 +62,11 @@ public class ListEmployees {
     // }
 
     public static void showListEmployee() {
-        System.out.println("Список работников: ");
+        System.out.println("Список работников: ".toUpperCase());
         for (Employee employee : employees) {
             System.out.println(employee);
         }
+        System.out.printf("ВСЕГО работников: %d \n", Employee.getCount());
 
     }
 
