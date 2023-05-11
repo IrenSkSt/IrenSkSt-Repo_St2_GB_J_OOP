@@ -2,7 +2,7 @@
 
 package hw.hw_2;
 
-public class Main {
+public class Program {
     public static void main(String[] args) {
 
         // по базовым условиям задачи:
