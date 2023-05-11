@@ -17,6 +17,10 @@ abstract class Employee {
      */
     protected String surName;
     /**
+     * год рождения работника
+     */
+    protected int yearBorn;
+    /**
      * Тип контракта: имеет 2 значения: FullTime, Freelance
      */
     protected Contract contract;
@@ -46,10 +50,12 @@ abstract class Employee {
      * @param surName   = Фамилия
      * @param salary    = ставка ЗП за месяц
      */
-    public Employee(String firstName, String surName, double salary) {
+    public Employee(String firstName, String surName, int yearBorn, double salary) {
         this.firstName = firstName;
         this.surName = surName;
+        this.yearBorn = yearBorn;
         this.salary = salary;
+
     }
 
     /**
@@ -60,7 +66,8 @@ abstract class Employee {
     @Override
     public String toString() {
 
-        return String.format("%d: %s %s   \t\t ставка ЗП = %.2f тыс.руб/мес.\n", count, surName, firstName, salary);
+        return String.format("%d: %s %s (%d г.р.)\tставка ЗП = %.2f тыс.руб/мес.\n", count, surName, firstName,
+                yearBorn, salary);
     }
 
 }

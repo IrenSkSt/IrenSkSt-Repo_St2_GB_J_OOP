@@ -17,8 +17,8 @@ class Worker extends Employee {
         count++;
     }
 
-    public Worker(String firstName, String surName, double salary) {
-        super(firstName, surName, salary);
+    public Worker(String firstName, String surName, int yearBorn, double salary) {
+        super(firstName, surName, yearBorn, salary);
         this.contract = Contract.FullTime;
 
     }
@@ -31,8 +31,9 @@ class Worker extends Employee {
     @Override
     public String toString() {
 
-        return String.format("%s %s \t\t (%s)\t ставка ЗП = %.2f тыс.руб/мес. \tСр.месячная ЗП =%.2f руб/мес.\n",
-                surName, firstName, contract,
+        return String.format(
+                "%s %s, %d г.р. (%s) \tставка ЗП = %.2f тыс.руб/мес. \tСр.месячная ЗП = %.2f тыс.руб/мес.\n",
+                surName, firstName, yearBorn, contract,
                 salary, calculateMonthSalary());
     }
 

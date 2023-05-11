@@ -47,13 +47,16 @@ public class ListEmployees {
     }
 
     private static Worker newWorker() {
+        int yearBorn = random.nextInt(1960, 2000);
         int salary = random.nextInt(50, 180);
-        return new Worker(names[random.nextInt(names.length)], surNames[random.nextInt(names.length)], salary);
+        return new Worker(names[random.nextInt(names.length)], surNames[random.nextInt(names.length)], yearBorn,
+                salary);
     }
 
     private static Freelancer newFreelancer() {
+        int yearBorn = random.nextInt(1970, 1995);
         int salary = (int) (100 * random.nextInt(30, 80) / 20 / 8);
-        return new Freelancer(names[random.nextInt(names.length)], surNames[random.nextInt(names.length)],
+        return new Freelancer(names[random.nextInt(names.length)], surNames[random.nextInt(names.length)], yearBorn,
                 (double) salary / 100);
     }
 
