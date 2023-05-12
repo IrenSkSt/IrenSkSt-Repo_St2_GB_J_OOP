@@ -38,24 +38,26 @@ public class ReportAboutEmployee {
         showSortListAllEmpl("Год рождения по возрастанию");
 
         /** Список штатных сотрудников (т.е. без фрилансеров) моложе 30 лет */
-        if (Worker.getCount() > 0) {
-            System.out.printf("Список штатных сотрудников младше 30 лет (с %d года рождения): \n",
-                    Year.now().getValue() - 30);
-            int m = 0;
-            for (Employee employee : sortEmployees) {
-                if (employee instanceof Worker && employee.yearBorn >= (Year.now().getValue() - 30)) {
-                    sortWorkers[m++] = (Worker) employee;
-                    // System.out.println(m + " " + employee); // для проверки
-                    // System.out.println(m + " " + sortWorkers[m]); // для проверки
-                }
-            }
-            if (m - 1 > 1)
-                Arrays.sort(sortWorkers);
-            for (Employee worker : sortWorkers) {
-                System.out.println(worker);
-            }
-            System.out.println("Итого сотрудников 30 лет и моложе: " + m);
-        }
+        // if (Worker.getCount() > 0) {
+        // System.out.printf("Список штатных сотрудников младше 30 лет (с %d года
+        // рождения): \n",
+        // Year.now().getValue() - 30);
+        // int m = 0;
+        // for (Employee employee : sortEmployees) {
+        // if (employee instanceof Worker && employee.yearBorn >= (Year.now().getValue()
+        // - 30)) {
+        // sortWorkers[m++] = (Worker) employee;
+        // // System.out.println(m + " " + employee); // для проверки
+        // // System.out.println(m + " " + sortWorkers[m]); // для проверки
+        // }
+        // }
+        // if (m - 1 > 1)
+        // Arrays.sort(sortWorkers);
+        // for (Employee worker : sortWorkers) {
+        // System.out.println(worker);
+        // }
+        // System.out.println("Итого сотрудников 30 лет и моложе: " + m);
+        // }
 
         /** Список сотрудников в штате предпенсионного и пенсионного возраста */
         ListPrePensionAge.createListPrePensionAge();
