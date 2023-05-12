@@ -22,9 +22,16 @@ public class ReportAboutEmployee {
         ListEmployees.showListEmployee();
 
         sortEmployees = ListEmployees.employees.clone();
+
+        /** Всех работников отсортировали по Фамилии в алфавитном порядке */
         Arrays.sort(sortEmployees, new SurnameComparator());
         showSortListAllEmpl("Фамилии в алфавитном порядке");
 
+        /** Всех работников отсортировали по году рождения по возрастанию */
+        Arrays.sort(sortEmployees, new YearBornComparator());
+        showSortListAllEmpl("Год рождения по возрастанию");
+
+        /** Всех работников отсортировали по ср.мес.ЗП по убыванию */
         Arrays.sort(sortEmployees);
         showSortListAllEmpl("ЗП за месяц по убыванию");
         // ListEmployees.showListEmployee(); // для проверки
