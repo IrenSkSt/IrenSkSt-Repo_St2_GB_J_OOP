@@ -29,21 +29,6 @@ public class ListEmployees {
             }
         }
 
-        // for (Employee employee : employees) {
-        // int contract = random.nextInt(2);
-        // switch (contract) {
-        // case 0:
-        // employee = newWorker();
-        // // System.out.println(employee); // для проверки
-        // break;
-
-        // default:
-        // employee = newFreelancer();
-        // // System.out.println(employee); // для проверки
-        // break;
-        // }
-
-        // }
     }
 
     private static Worker newWorker() {
@@ -60,12 +45,8 @@ public class ListEmployees {
                 (double) salary / 100);
     }
 
-    // public static void showListEmployee() {
-    // System.out.println();
-    // }
-
     public static void showListEmployee() {
-        System.out.println("Список работников: ".toUpperCase());
+        System.out.println("\nСписок работников: ".toUpperCase());
         for (Employee employee : employees) {
             System.out.println(employee);
         }

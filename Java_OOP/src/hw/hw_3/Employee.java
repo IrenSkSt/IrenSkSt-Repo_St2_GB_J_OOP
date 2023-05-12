@@ -6,7 +6,7 @@ package hw.hw_3;
  * ВСЕ рабочие дни в месяце = 20 рабочих дней
  * без реализации иных вариантов
  */
-abstract class Employee {
+abstract class Employee implements Comparable<Employee> {
 
     /**
      * Имя работника
@@ -69,5 +69,18 @@ abstract class Employee {
         return String.format("%d: %s %s (%d г.р.)\tставка ЗП = %.2f тыс.руб/мес.\n", count, surName, firstName,
                 yearBorn, salary);
     }
+
+    @Override
+    public int compareTo(Employee o) {
+        /**
+         * ср.месячная ЗП по убыванию
+         */
+        return Double.compare(o.calculateMonthSalary(), this.calculateMonthSalary());
+    }
+
+    // private int compere(double calculateMonthSalary, double
+    // calculateMonthSalary2) {
+    // return 0;
+    // }
 
 }
