@@ -50,7 +50,10 @@ public class ListEmployees {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
-        System.out.printf("ВСЕГО работников: %d \n", Employee.getCount());
+        System.out.printf("ВСЕГО работников: %d чел.\n", Employee.getCount());
+        if (Employee.getCount() > 1)
+            System.out.printf("в том числе в штате: %d чел., на фрилансе (за штатом): %d чел.\n", Worker.getCount(),
+                    Freelancer.getCount());
 
     }
 

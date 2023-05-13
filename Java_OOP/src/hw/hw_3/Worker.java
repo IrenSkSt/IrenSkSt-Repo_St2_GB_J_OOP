@@ -13,6 +13,10 @@ class Worker extends Employee {
      */
     private static int count;
 
+    public static int getCount() {
+        return count;
+    }
+
     {
         count++;
     }

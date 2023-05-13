@@ -29,7 +29,8 @@ public class ListPrePensionAge {
             if (worker != null)
                 System.out.println(++j + " " + worker);
         }
-        System.out.printf("ВСЕГО в штате работников предпенсионного и пенсионного возраста (%d лет и старше): %d\n",
+        System.out.printf(
+                "ВСЕГО в штате работников предпенсионного и пенсионного возраста (%d лет и старше): %d чел.\n",
                 minPrePensionAge, j);
     }
 
