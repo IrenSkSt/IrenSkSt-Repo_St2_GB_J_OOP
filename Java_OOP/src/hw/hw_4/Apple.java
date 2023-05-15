@@ -15,6 +15,10 @@ public class Apple extends Fruit {
         return counter;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public Apple() {
         super(0.135f);
         this.name = "Яблоко";

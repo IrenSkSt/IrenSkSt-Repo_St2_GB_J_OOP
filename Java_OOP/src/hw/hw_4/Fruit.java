@@ -2,6 +2,8 @@ package hw.hw_4;
 
 public abstract class Fruit {
 
+    protected String name;
+
     protected final float weight;
 
     static int counter;
@@ -21,6 +23,10 @@ public abstract class Fruit {
 
     public float getWeight() {
         return weight;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Fruit(float weight) {
