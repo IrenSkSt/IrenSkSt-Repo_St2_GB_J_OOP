@@ -7,7 +7,8 @@ package hw.hw_4;
 
 public class Main {
     public static void main(String[] args) {
-        StoreFruites.createBoxesFruitse(); // Задача 1 ДЗ №4
+        StoreFruites.createBoxesFruites(); // Задача 1 ДЗ №4
 
     }
+
 }
