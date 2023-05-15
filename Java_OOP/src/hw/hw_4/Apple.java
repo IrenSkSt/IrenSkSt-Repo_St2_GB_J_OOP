@@ -5,6 +5,7 @@ public class Apple extends Fruit {
     private String name;
 
     static int counter;
+    static float totalWeight;
 
     {
         counter++;
@@ -17,6 +18,7 @@ public class Apple extends Fruit {
     public Apple() {
         super(0.135f);
         this.name = "Яблоко";
+        totalWeight = totalWeight + weight;
     }
 
     @Override

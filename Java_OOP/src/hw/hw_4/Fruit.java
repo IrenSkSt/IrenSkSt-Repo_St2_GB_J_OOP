@@ -5,6 +5,7 @@ public abstract class Fruit {
     protected final float weight;
 
     static int counter;
+    static float totalWeight;
 
     {
         counter++;
@@ -14,12 +15,17 @@ public abstract class Fruit {
         return counter;
     }
 
+    public static float getTotalWeight() {
+        return totalWeight;
+    }
+
     public float getWeight() {
         return weight;
     }
 
     public Fruit(float weight) {
         this.weight = weight;
+        totalWeight = totalWeight + weight;
     }
 
     @Override
