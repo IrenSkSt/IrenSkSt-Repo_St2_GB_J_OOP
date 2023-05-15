@@ -2,7 +2,7 @@ package hw.hw_4;
 
 import java.util.Random;
 
-public class ListFruites {
+public class ListOfFruites {
 
     static Fruit[] lFruits = new Fruit[10];
 

@@ -10,7 +10,8 @@ public class StoreFruites {
         // System.out.println(fruit2); // для проверки
 
         /** Получены фрукты для сортировки */
-        ListFruites.createListOfFruites();
+        ListOfFruites.createListOfFruites();
+
     }
 
 }
