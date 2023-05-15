@@ -7,7 +7,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        ReportAboutEmployee.CreateReports(); // Задача 1 ДЗ №3
+        // ReportAboutEmployee.CreateReports(); // Задача 1 ДЗ №3
 
     }
 }
