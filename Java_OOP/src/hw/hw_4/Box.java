@@ -30,19 +30,46 @@ public class Box<T extends Fruit> implements Comparable<Box<? extends Fruit>> {
     }
 
     public float getTotalWeight() {
-        return totalWeight = fruites.size() * fruites.get(0).weight;
+        if (fruites.size() == 0)
+            return totalWeight = 0;
+        else
+            return totalWeight = fruites.size() * fruites.get(0).weight;
     }
 
     public Box(String typeBox) {
         this.fruites = new ArrayList<T>();
         this.name = String.format("Box #%d", counter);
         this.typeBox = typeBox;
-        // this.totalWeight = getTotalWeight();
+        this.totalWeight = getTotalWeight();
     }
 
     public void addFruitToBox(T fruit) {
-        fruites.add(fruit);
+        this.fruites.add(fruit);
         this.totalWeight = getTotalWeight();
+    }
+
+    public void deleteFruitFromBox(T fruit) {
+        this.fruites.remove(fruit);
+        this.totalWeight = getTotalWeight();
+    }
+
+    public void replaceFruitFromBox(T fruit, Box<T> newBox) {
+        newBox.fruites.add(fruit);
+        this.fruites.remove(fruit);
+        this.totalWeight = getTotalWeight();
+        newBox.totalWeight = newBox.getTotalWeight();
+    }
+
+    public void replaceAllFruitsFromBox(Box<T> newBox) {
+        for (T t : this.fruites) {
+            newBox.fruites.add(t);
+            remove(t);
+        }
+        this.totalWeight = getTotalWeight();
+        newBox.totalWeight = newBox.getTotalWeight();
+    }
+
+    private void remove(T t) {
     }
 
     public T getElement(Integer index) {
@@ -60,7 +87,7 @@ public class Box<T extends Fruit> implements Comparable<Box<? extends Fruit>> {
 
     }
 
-    public String compare(Box o) {
+    public String compare(Box<?> o) {
 
         return String.format(
                 (compareTo(o) == 0) ? "\nКоробки %s и %s одинакового веса" : "\nВес коробок %s и %s разный\n",
@@ -68,7 +95,7 @@ public class Box<T extends Fruit> implements Comparable<Box<? extends Fruit>> {
     }
 
     @Override
-    public int compareTo(Box o) {
+    public int compareTo(Box<?> o) {
         // System.out.println(this.totalWeight); // для проверки
         // System.out.println(o.getTotalWeight()); // для проверки
         // return Float.compare(this.totalWeight, o.totalWeight);
