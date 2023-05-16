@@ -63,13 +63,11 @@ public class Box<T extends Fruit> implements Comparable<Box<? extends Fruit>> {
     public void replaceAllFruitsFromBox(Box<T> newBox) {
         for (T t : this.fruites) {
             newBox.fruites.add(t);
-            remove(t);
+
         }
+        this.fruites.removeAll(fruites);
         this.totalWeight = getTotalWeight();
         newBox.totalWeight = newBox.getTotalWeight();
-    }
-
-    private void remove(T t) {
     }
 
     public T getElement(Integer index) {
@@ -78,11 +76,14 @@ public class Box<T extends Fruit> implements Comparable<Box<? extends Fruit>> {
 
     public void getInfo() {
         System.out.printf("\n%s (%.2f кг): ", name, getTotalWeight());
-
-        for (T fruit : fruites) {
-            System.out.printf("%s  ", fruit.getName());
+        if (fruites.size() == 0)
+            System.out.println("пустая");
+        else {
+            for (T fruit : fruites) {
+                System.out.printf("%s  ", fruit.getName());
+            }
+            System.out.println();
         }
-        System.out.println();
         // return String.format("%s (%s)", name, typeBox);
 
     }
