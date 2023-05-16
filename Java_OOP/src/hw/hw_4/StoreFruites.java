@@ -6,12 +6,14 @@ public class StoreFruites {
 
         // v1-------простые решения задачи
         Apple fruit1 = new Apple();
-        // System.out.println(fruit1); // для проверки
+        System.out.println(fruit1);
 
         Fruit fruit2 = new Orange();
-        // System.out.println(fruit2); // для проверки
+        System.out.println(fruit2);
 
         Box<Apple> box1 = new Box<>("Apple");
+        box1.getInfo();
+        System.out.println("\nРазложили фрукты по коробкам: ");
         box1.addFruitToBox(new Apple());
         box1.addFruitToBox(new Apple());
         box1.addFruitToBox(new Apple());
@@ -46,6 +48,7 @@ public class StoreFruites {
         box1.getInfo();
         box3.getInfo();
 
+        // box2.replaceAllFruitsFromBox(box3); // для проверки
         box1.replaceAllFruitsFromBox(box3);
         System.out.printf("\nПереложили все фрукты из коробки %s в %s ", box1.getName(), box3.getName());
         box1.getInfo();
