@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Box<T extends Fruit> {
 
     private String name;
-    // private String typeBox;
+    private String typeBox;
 
     private ArrayList<T> fruites;
 
@@ -25,14 +25,18 @@ public class Box<T extends Fruit> {
         return name;
     }
 
+    public String getTypeBox() {
+        return typeBox;
+    }
+
     public float getTotalWeight() {
         return totalWeight = fruites.size() * fruites.get(0).weight;
     }
 
-    public Box() {
+    public Box(String typeBox) {
         this.fruites = new ArrayList<T>();
         this.name = String.format("Box #%d", counter);
-
+        this.typeBox = typeBox;
     }
 
     public void addFruitToBox(T fruit) {

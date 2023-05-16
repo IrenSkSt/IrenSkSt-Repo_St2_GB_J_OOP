@@ -15,16 +15,23 @@ public class StoreFruites {
         // // box1.addFruitToBox(new Orange()); // для проверки
         // box1.getInfo(); // для проверки
 
-        // Box<Orange> box2 = new Box<>(); // для проверки
-        // // box2.addFruitToBox(new Apple()); // для проверки
-        // box2.addFruitToBox(new Orange()); // для проверки
-        // box2.addFruitToBox(new Orange()); // для проверки
-        // box2.getInfo(); // для проверки
-        // System.out.println(box2.getTotalWeight()); // для проверки
+        Box<Orange> box2 = new Box<>("Orange"); // для проверки
+        // box2.addFruitToBox(new Apple()); // для проверки
+        box2.addFruitToBox(new Orange()); // для проверки
+        box2.addFruitToBox(new Orange()); // для проверки
+        box2.getInfo(); // для проверки
+        System.out.println(box2.getTotalWeight()); // для проверки
 
         /** Получены фрукты для сортировки */
         // ListOfFruites.createListOfFruites();
 
+        /** Получили коробки */
+        // ListOfBoxes.getBoxs();
+
+        /**
+         * Фрукты будут автоматически разложены по своим коробкам по очередно в каждую
+         */
+        // ListOfBoxes.putFruitsToBoxs();
     }
 
 }
