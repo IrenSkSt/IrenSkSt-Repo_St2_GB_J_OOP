@@ -3,8 +3,9 @@ package hw.hw_4;
 public class Apple extends Fruit {
 
     private String name;
-
+    /** количество яблок всего */
     static int counter;
+    /** общий вес яблок */
     static float totalWeight;
 
     {
@@ -20,6 +21,7 @@ public class Apple extends Fruit {
     }
 
     public Apple() {
+        /** вес яблока- 1шт. */
         super(0.135f);
         this.name = "Яблоко";
         totalWeight = totalWeight + weight;

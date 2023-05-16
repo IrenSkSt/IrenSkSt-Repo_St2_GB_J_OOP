@@ -3,10 +3,11 @@ package hw.hw_4;
 public abstract class Fruit {
 
     protected String name;
-
+    /** вес фрукта- 1шт. */
     protected final float weight;
-
+    /** количество фруктов всего */
     static int counter;
+    /** общий вес фруктов */
     static float totalWeight;
 
     {

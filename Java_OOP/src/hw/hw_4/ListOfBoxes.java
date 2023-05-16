@@ -27,8 +27,16 @@ public class ListOfBoxes {
     }
 
     public static void putFruitsToBoxs() {
-        for (Box box : lBoxs) {
+        if (ListOfFruites.lFruits.length != 0) {
+            for (Fruit fruit : ListOfFruites.lFruits) {
+                for (Box box : lBoxs) {
+                    if (fruit instanceof Apple && box instanceof Apple)
+                        box.addFruitToBox(fruit);
+                }
+            }
+
         }
+
     }
 
 }
