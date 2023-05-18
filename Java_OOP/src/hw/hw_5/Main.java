@@ -2,12 +2,12 @@
 package hw.hw_5;
 
 /**
- * Main
+ * Забронировать столик в ресторане
  */
 public class Main {
 
     public static void main(String[] args) {
 
-        // задача 1 ДЗ_5
+        BookingTable.startToBookTable();// задача 1 ДЗ_5
     }
 }
