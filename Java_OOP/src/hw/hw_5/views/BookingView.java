@@ -5,14 +5,43 @@ import java.util.Date;
 
 import hw.hw_5.models.Table;
 import hw.hw_5.presenters.View;
+import hw.hw_5.presenters.ViewObserver;
 
 public class BookingView implements View {
+
+    /**
+     * Наблюдатель для отслеживания действий пользователя
+     */
+    private ViewObserver observer;
+
+    /**
+     * Установить наблюдателя для отслеживания действий пользователя
+     * 
+     * @param observer
+     */
+    public void setObserver(ViewObserver observer) {
+        this.observer = observer;
+    }
 
     /** Показать список всех столиков */
     public void showListOfTable(Collection<Table> tables) {
         for (Table table : tables) {
             System.out.println(table);
         }
+    }
+
+    /**
+     * Отображение результата резервирования для пользователя
+     * 
+     * @param reservationID - номер брони (успешно прошла операция бронирования)
+     *                      либо сообщение о невозможности бронирования (какой-то
+     *                      сбой в бронировании)
+     */
+    public void showResultOfReservationTable(int reservationID) {
+        if (reservationID > 0)
+            System.out.printf("\nСтолик зарезервирован - номер брони: %d \n", reservationID);
+        else
+            System.out.println("\nОшибка бронирвания. Повторите попытку.\n");
     }
 
     /**
@@ -24,7 +53,7 @@ public class BookingView implements View {
      * @param nameCustomer    - имя клиента
      */
     public void reservationTable(Date dateReservation, int numTable, String nameCustomer) {
-
+        observer.onReservationTable(dateReservation, numTable, nameCustomer);
     }
 
 }

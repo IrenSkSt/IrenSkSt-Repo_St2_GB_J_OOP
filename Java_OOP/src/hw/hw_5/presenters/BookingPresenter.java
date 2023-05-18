@@ -1,6 +1,7 @@
 package hw.hw_5.presenters;
 
 import java.util.Collection;
+import java.util.Date;
 
 import hw.hw_5.models.Table;
 
@@ -24,6 +25,18 @@ public class BookingPresenter implements ViewObserver {
     public BookingPresenter(Model model, View view) {
         this.model = model;
         this.view = view;
+        this.view.setObserver(this);
+    }
+
+    public void updateStatusReservation(int reservationID) {
+        view.showResultOfReservationTable(reservationID);
+    }
+
+    @Override
+    public void onReservationTable(Date dateReservation, int numTable, String nameCustomer) {
+        int reservationID = model.reservationTable(dateReservation, numTable, nameCustomer);
+        updateStatusReservation(reservationID);
+        //
     }
 
 }
