@@ -19,16 +19,32 @@ public class BookingTable {
 
         // клиент нажал на кнопку зарезервировать и заполнил форму резервирования
         System.out.println("\nСписок операции бронирования: ");
-        view.reservationTable(new Date(), 2, "Коля");
-        System.out.println("Next-------------------");
-        view.reservationTable(new Date(), 7, "Оля");
-        System.out.println("Next-------------------");
-        view.reservationTable(new Date(), 4, "Оля");
-        System.out.println("Next-------------------");
-        view.reservationTable(new Date(), 5, "Данил");
+        String nameCustomer;
+
+        System.out.printf("%s, ", nameCustomer = "Коля");
+        view.reservationTable(new Date(), 2, nameCustomer);
+
+        System.out.println("\nNext-------------------");
+        System.out.printf("%s, ", nameCustomer = "Оля");
+        view.reservationTable(new Date(), 7, nameCustomer);
+
+        System.out.println("\nNext-------------------");
+        System.out.printf("%s, ", nameCustomer = "Оля");
+        view.reservationTable(new Date(), 4, nameCustomer);
+
+        System.out.println("\nNext-------------------");
+        System.out.printf("%s, ", nameCustomer = "Данил");
+        view.reservationTable(new Date(), 5, nameCustomer);
 
         // клиент нажал кнопку отменить бронь
-        System.out.println("Next-------------------");
+        int numReservation;
+        System.out.println("\nNext-------------------");
+        System.out.printf("Номер брони %d, ", numReservation = 1002);
+        view.cancelReservation(numReservation);
+
+        System.out.println("\nNext-------------------");
+        System.out.printf("Номер брони %d  ", numReservation = 4002);
+        view.cancelReservation(numReservation);
 
     }
 

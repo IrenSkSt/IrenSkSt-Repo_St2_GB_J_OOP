@@ -62,10 +62,11 @@ public class BookingView implements View {
      * @param resultCancel - сообщение о результате отмены брони: успешно или нет
      */
     public void showResultCancelReservation(int resultCancel) {
-        if (resultCancel > 0)
-            System.out.println("Бронь успешно отменена.");
-        else
-            System.out.println("Ошибка. Отмена брони не выполнена. Повторите попытку.");
+        if (resultCancel > 0) {
+            System.out.println(resultCancel); // для проверки
+            System.out.println("\nБронь успешно отменена.\n");
+        } else
+            System.out.println("\nОшибка. Отмена брони не выполнена. Повторите попытку.\n");
     }
 
     /**

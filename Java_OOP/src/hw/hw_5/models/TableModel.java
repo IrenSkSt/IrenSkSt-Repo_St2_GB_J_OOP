@@ -62,9 +62,12 @@ public class TableModel implements Model {
     public int cancelReservation(int reservationID) {
         for (Table table : tables) {
             for (Reservation reservation : table.getListReservations()) {
-                if (reservation.getId() == reservationID)
+                if (reservation.getId() == reservationID) {
+
                     table.getListReservations().remove(reservation);
-                return 1;
+                    return 1;
+                }
+
             }
 
         }
