@@ -46,6 +46,11 @@ public class BookingTable {
         System.out.printf("Номер брони %d  ", numReservation = 4002);
         view.cancelReservation(numReservation);
 
+        // клиент нажал кнопку изменить бронь
+        System.out.println("\nNext-------------------");
+        System.out.printf("%s, ", nameCustomer = "Коля");
+        System.out.printf("Вы вносите изменения в бронь %d, ", numReservation = 1001);
+        view.changeReservationTable(numReservation, new Date(), 3, nameCustomer);
     }
 
 }

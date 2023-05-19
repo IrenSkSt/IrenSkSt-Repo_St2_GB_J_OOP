@@ -15,4 +15,10 @@ public interface Model {
 
     /** Операция отмены брони столика */
     int cancelReservation(int reservationID);
+
+    /**
+     * Операция изменения брони (по принципу удаления старой и создания новой брони)
+     */
+    int changeReservationTable(int reservationID, Date newDateReservation, int newNumTable,
+            String newNameCustomer);
 }

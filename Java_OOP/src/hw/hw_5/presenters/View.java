@@ -17,4 +17,7 @@ public interface View {
 
     /** Отображение результата отмены резервирования для пользователя */
     void showResultCancelReservation(int resultCancel);
+
+    /** Отображение результата изменения резервирования для пользователя */
+    void showResultChangeReservationTable(int newReservationID);
 }

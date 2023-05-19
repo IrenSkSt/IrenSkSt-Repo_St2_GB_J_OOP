@@ -72,9 +72,36 @@ public class BookingView implements View {
     /**
      * Событие - Пользователь нажал на кнопку отмены бронирования по номеру брони
      * 
-     * @param reservationID - номер (ID) брони
+     * @param reservationID - номер (ID) текущей брони
      */
     public void cancelReservation(int reservationID) {
         observer.onCancelReservation(reservationID);
+    }
+
+    /**
+     * Отображение результата изменения резервирования для пользователя
+     * 
+     * @param newReservationID - номер (ID) текущей брони
+     *                         или сообщение об ошибке
+     */
+    public void showResultChangeReservationTable(int newReservationID) {
+        if (newReservationID > 0)
+            System.out.printf("\nБронь успешно изменена. \nНомер новой брони: %d \n", newReservationID);
+        else
+            System.out.println("\nОшибка.Изменить бронь не удалось. Повторите попытку.\n");
+    }
+
+    /**
+     * Событие - Пользователь нажал на кнопку Изменить бронь по номеру брони,
+     * заполнил форму с новыми (изменеными) данными
+     * 
+     * @param reservationID      - номер (ID) текущей брони
+     * @param newDateReservation - дата/время новой брони
+     * @param newNumTable        - номер столика в новой брони
+     * @param newNameCustomer    - имя клиента в новой брони
+     */
+    public void changeReservationTable(int reservationID, Date newDateReservation, int newNumTable,
+            String newNameCustomer) {
+        observer.onChangeReservationTable(reservationID, newDateReservation, newNumTable, newNameCustomer);
     }
 }

@@ -75,4 +75,38 @@ public class TableModel implements Model {
 
     }
 
+    /**
+     * Операция изменения брони (по принципу удаления старой и создания новой брони)
+     * 
+     * @param reservationID      - номер текущей брони
+     * @param newDateReservation - дата/время новой брони
+     * @param newNumTable        - номер столика в новой брони
+     * @param newNameCustomer    - имя клиента в новой брони
+     * @return - результат изменения брони:
+     *         1 =если новая бронь успешно зарегистрирована, тогда старая отменяется
+     *         (две операции должны быть успешные, иначе новвая удаляется)
+     *         -1 = ошибка
+     */
+    public int changeReservationTable(int reservationID, Date newDateReservation, int newNumTable,
+            String newNameCustomer) {
+        for (Table table : tables) {
+            for (Reservation reservation : table.getListReservations()) {
+                if (reservation.getId() == reservationID) {
+                    int newReservationID = reservationTable(newDateReservation, newNumTable, newNameCustomer);
+                    if (newReservationID > 0) {
+                        int resultCancelOldReservation = cancelReservation(reservationID);
+                        if (resultCancelOldReservation > 0)
+                            return newReservationID;
+                    } else
+                        cancelReservation(newReservationID);
+
+                }
+
+            }
+
+        }
+        return -1;
+
+    }
+
 }

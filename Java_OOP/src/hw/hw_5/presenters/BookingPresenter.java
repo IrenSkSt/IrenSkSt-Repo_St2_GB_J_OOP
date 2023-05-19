@@ -49,4 +49,17 @@ public class BookingPresenter implements ViewObserver {
         resultCancelReservation(resultCancel);
     }
 
+    public void resultChangeReservationTable(int newReservationID) {
+        view.showResultChangeReservationTable(newReservationID);
+    }
+
+    @Override
+    public void onChangeReservationTable(int reservationID, Date newDateReservation, int newNumTable,
+            String newNameCustomer) {
+        int newReservationID = model.changeReservationTable(reservationID, newDateReservation, newNumTable,
+                newNameCustomer);
+        resultChangeReservationTable(newReservationID);
+
+    }
+
 }
