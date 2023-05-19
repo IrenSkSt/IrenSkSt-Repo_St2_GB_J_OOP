@@ -13,4 +13,6 @@ public interface Model {
     /** Операция резервирования столика */
     int reservationTable(Date dateReservation, int numTable, String nameCustomer);
 
+    /** Операция отмены брони столика */
+    int cancelReservation(int reservationID);
 }

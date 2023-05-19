@@ -56,4 +56,24 @@ public class BookingView implements View {
         observer.onReservationTable(dateReservation, numTable, nameCustomer);
     }
 
+    /**
+     * Отображение результата отмены резервирования для пользователя
+     * 
+     * @param resultCancel - сообщение о результате отмены брони: успешно или нет
+     */
+    public void showResultCancelReservation(int resultCancel) {
+        if (resultCancel > 0)
+            System.out.println("Бронь успешно отменена.");
+        else
+            System.out.println("Ошибка. Отмена брони не выполнена. Повторите попытку.");
+    }
+
+    /**
+     * Событие - Пользователь нажал на кнопку отмены бронирования по номеру брони
+     * 
+     * @param reservationID - номер (ID) брони
+     */
+    public void cancelReservation(int reservationID) {
+        observer.onCancelReservation(reservationID);
+    }
 }

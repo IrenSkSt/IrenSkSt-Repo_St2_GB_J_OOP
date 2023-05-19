@@ -39,4 +39,14 @@ public class BookingPresenter implements ViewObserver {
         //
     }
 
+    public void resultCancelReservation(int resultCancel) {
+        view.showResultCancelReservation(resultCancel);
+    }
+
+    @Override
+    public void onCancelReservation(int reservationID) {
+        int resultCancel = model.cancelReservation(reservationID);
+        resultCancelReservation(resultCancel);
+    }
+
 }

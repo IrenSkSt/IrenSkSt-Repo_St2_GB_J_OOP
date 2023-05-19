@@ -53,4 +53,23 @@ public class TableModel implements Model {
         // раз.");
     }
 
+    /**
+     * Операция отмены брони столика
+     * 
+     * @param reservationID - номер(ID) брони
+     * @return результат отмены: 1=успешно, -1=ошибка(не найден номер брони)
+     */
+    public int cancelReservation(int reservationID) {
+        for (Table table : tables) {
+            for (Reservation reservation : table.getListReservations()) {
+                if (reservation.getId() == reservationID)
+                    table.getListReservations().remove(reservation);
+                return 1;
+            }
+
+        }
+        return -1;
+
+    }
+
 }

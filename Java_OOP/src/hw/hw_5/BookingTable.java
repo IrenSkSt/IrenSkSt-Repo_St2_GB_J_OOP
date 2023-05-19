@@ -17,7 +17,7 @@ public class BookingTable {
         bookingPresenter.loadListOfTables(); // загрузка данных
         bookingPresenter.updateView(); // отображение данных
 
-        // клиент заполнил форму резервирования
+        // клиент нажал на кнопку зарезервировать и заполнил форму резервирования
         System.out.println("\nСписок операции бронирования: ");
         view.reservationTable(new Date(), 2, "Коля");
         System.out.println("Next-------------------");
@@ -26,6 +26,10 @@ public class BookingTable {
         view.reservationTable(new Date(), 4, "Оля");
         System.out.println("Next-------------------");
         view.reservationTable(new Date(), 5, "Данил");
+
+        // клиент нажал кнопку отменить бронь
+        System.out.println("Next-------------------");
+
     }
 
 }
