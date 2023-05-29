@@ -8,6 +8,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BookingTable.startToBookTable();// задача 1 ДЗ_5
+        // BookingTable.startToBookTable();// задача 1 ДЗ_5
     }
 }
