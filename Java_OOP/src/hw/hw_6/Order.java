@@ -6,6 +6,22 @@ public class Order {
     private int qnt;
     private float price;
 
+    public void setNameCustomer(String nameCustomer) {
+        this.nameCustomer = nameCustomer;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public void setQnt(int qnt) {
+        this.qnt = qnt;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
     public String getNameCustomer() {
         return nameCustomer;
     }
@@ -32,7 +48,7 @@ public class Order {
     @Override
     public String toString() {
 
-        return String.format("%s, \nВаш заказ:  %s \tцена = %.2f у.е. \tколичество = %d шт.\n", nameCustomer, product,
+        return String.format("%s, \nВаш заказ:  %s \tцена = %.2f у.е. \tколичество = %d шт.", nameCustomer, product,
                 price, qnt);
     }
 

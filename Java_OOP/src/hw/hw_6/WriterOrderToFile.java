@@ -27,6 +27,7 @@ public class WriterOrderToFile {
             writer.write("\"price\":" + order.getPrice() + "\n");
             writer.write("}\n");
             writer.flush();
+            System.out.printf("Ваш заказ сохранен в файл %s\n", fileName);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
