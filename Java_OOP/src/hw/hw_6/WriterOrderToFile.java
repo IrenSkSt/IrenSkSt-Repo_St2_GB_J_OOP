@@ -1,7 +1,17 @@
 package hw.hw_6;
 
 import java.io.FileWriter;
+import java.io.Writer;
 
+import javax.sound.sampled.AudioFormat.Encoding;
+
+/**
+ * Запись заказа в файл .json
+ * 
+ * @param order    - заказ
+ * @param fileName - имя файла для записи заказа
+ * @param count    - счетчик файлов - указывается в имени файла (старт с 1)
+ */
 public class WriterOrderToFile {
 
     private Order order;
@@ -19,7 +29,7 @@ public class WriterOrderToFile {
 
     public void saveOrderToFileJson() {
         try (FileWriter writer = new FileWriter(fileName, false)) {
-
+            // .setDefaultEncoding("UTF-8");
             writer.write("{\n");
             writer.write("\"clientName\":\"" + order.getNameCustomer() + "\",\n");
             writer.write("\"product\":\"" + order.getProduct() + "\",\n");

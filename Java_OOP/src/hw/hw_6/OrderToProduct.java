@@ -1,16 +1,17 @@
 package hw.hw_6;
 
-public class OrderProduct {
+public class OrderToProduct {
 
     public static void createOrderProduct() {
 
         // вариант - ввели данные заказа и вывели в консоль
         // + записали в файл в формате json
-        Order order0 = new Order("Аня", "Комод", 1, 350); // для проверки
-        System.out.println(order0); // для проверки
-        WriterOrderToFile writerOrderToFile0 = new WriterOrderToFile(order0); // для проверки
-        writerOrderToFile0.saveOrderToFileJson(); // для проверки
-        System.out.println("----------------------------------");
+        // Order order0 = new Order("Аня", "Комод", 1, 350); // для проверки
+        // System.out.println(order0); // для проверки
+        // WriterOrderToFile writerOrderToFile0 = new WriterOrderToFile(order0); // для
+        // проверки
+        // writerOrderToFile0.saveOrderToFileJson(); // для проверки
+        // System.out.println("----------------------------------");
 
         // Вариант - заполнение полей заказа из консоли
         // и записали в файл в формате json

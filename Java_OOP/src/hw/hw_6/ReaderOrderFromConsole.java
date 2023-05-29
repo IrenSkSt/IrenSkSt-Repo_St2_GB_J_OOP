@@ -2,6 +2,12 @@ package hw.hw_6;
 
 import java.util.Scanner;
 
+/**
+ * Заполнение формы заказа из консоли
+ * 
+ * @param order - заказ
+ * 
+ */
 public class ReaderOrderFromConsole {
 
     private Order order;
