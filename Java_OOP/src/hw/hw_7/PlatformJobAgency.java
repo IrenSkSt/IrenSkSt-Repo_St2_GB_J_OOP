@@ -18,6 +18,12 @@ public class PlatformJobAgency {
         jobAgency.registerObserver(junior1);
         jobAgency.registerObserver(student1);
 
+        for (int i = 0; i < 10; i++) {
+            company1.needEmployee();
+            company2.needEmployee();
+            company3.needEmployee();
+        }
+
     }
 
 }

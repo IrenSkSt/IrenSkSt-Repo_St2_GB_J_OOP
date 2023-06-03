@@ -18,4 +18,16 @@ public class Student implements Obsever {
         return String.format("Student %s претендует на ЗП не менее %d тыс.руб. \n", name, minSalary);
     }
 
+    @Override
+    public void receiveOffer(String nameCompany, double salary) {
+        if (this.minSalary < salary) {
+            System.out.printf("Student %s >>> Мне нужна эта работа! [%s - %.0f тыс.руб.]\n", name, nameCompany, salary);
+            this.minSalary = salary;
+        } else {
+            System.out.printf("Student %s >>> Есть более выгодное предложение [%s - %.0f тыс.руб.]\n", name,
+                    nameCompany,
+                    salary);
+        }
+    }
+
 }
