@@ -16,10 +16,29 @@ public class Company {
         this.jobAgency = jobAgency;
     }
 
-    public void needEmployee() {
+    // public void needEmployee() {
+    // Random random = new Random();
+    // double salary = random.nextDouble(15, maxSalary);
+    // jobAgency.sendOffer(nameCompany, salary);
+    // }
+
+    public void createVacancy(PROFESSION profession, POSITION position) {
         Random random = new Random();
-        double salary = random.nextDouble(15, maxSalary);
-        jobAgency.sendOffer(nameCompany, salary);
+        double salary;
+        switch (position) {
+            case Entern:
+                salary = random.nextDouble(15, maxSalary / 3);
+                break;
+            case Junior:
+                salary = random.nextDouble(maxSalary / 3, maxSalary * 2 / 3);
+                break;
+            default:
+                salary = random.nextDouble(maxSalary * 2 / 3, maxSalary);
+                break;
+        }
+        new Vacancy(nameCompany, profession, position, salary);
+        jobAgency.sendOffer(nameCompany, profession, position, salary);
+
     }
 
 }

@@ -21,12 +21,17 @@ public class JobAgency implements Publisher {
 
     /**
      * Рассылка агентством полученной вакансии от компании
-     * каждому соискателю
+     * каждому соискателю, соответствующему вакансии по позиции и профессии
      */
     @Override
-    public void sendOffer(String nameCompany, double salary) {
+    public void sendOffer(String nameCompany, PROFESSION profession, POSITION position, double salary) {
         for (Obsever obsever : observers) {
-            obsever.receiveOffer(nameCompany, salary);
+            if (obsever instanceof Student && position.equals(POSITION.Entern)
+                    || obsever instanceof Junior && position.equals(POSITION.Junior)
+                    || obsever instanceof Master && position.equals(POSITION.Master))
+                if (profession.equals(obsever.getProfession()))
+
+                    obsever.receiveOffer(nameCompany, profession, position, salary);
         }
     }
 
