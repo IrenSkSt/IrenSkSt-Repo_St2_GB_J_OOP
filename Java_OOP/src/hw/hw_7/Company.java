@@ -1,5 +1,7 @@
 package hw.hw_7;
 
+import java.util.Random;
+
 /**
  * Компания -работодатель
  */
@@ -12,6 +14,12 @@ public class Company {
         this.nameCompany = nameCompany;
         this.maxSalary = maxSalary;
         this.jobAgency = jobAgency;
+    }
+
+    public void needEmployee() {
+        Random random = new Random();
+        double salary = random.nextDouble(15, maxSalary);
+        jobAgency.sendOffer(nameCompany, salary);
     }
 
 }
