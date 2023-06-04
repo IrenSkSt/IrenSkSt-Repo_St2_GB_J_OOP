@@ -24,14 +24,14 @@ public class PlatformJobAgency {
 
         jobAgency.showListObservers(); // для проверки
 
-        /** Вакансии */
         // for (int i = 0; i < 10; i++) {
         // company1.needEmployee();
         // company2.needEmployee();
         // company3.needEmployee();
         // }
 
-        System.out.println("Отклики соискателей по вакансия: ".toUpperCase());
+        /** Рассылка вакансий и отклики соискателей */
+        System.out.println("Отклики соискателей по вакансиям: ".toUpperCase());
         company1.createVacancy(PROFESSION.Project, POSITION.Entern);
         company1.createVacancy(PROFESSION.Programmer, POSITION.Junior);
         company1.createVacancy(PROFESSION.Product, POSITION.Junior);
