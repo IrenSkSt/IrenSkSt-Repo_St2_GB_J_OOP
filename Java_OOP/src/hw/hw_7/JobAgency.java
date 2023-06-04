@@ -35,4 +35,13 @@ public class JobAgency implements Publisher {
         }
     }
 
+    @Override
+    public void showListObservers() {
+        System.out.println("Список соискателей: ".toUpperCase());
+        for (Obsever obsever : observers) {
+            System.out.println(obsever);
+        }
+        System.out.println("-----------------------------");
+    }
+
 }

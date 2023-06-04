@@ -23,13 +23,13 @@ public class Master implements Obsever {
     public Master(String name, PROFESSION profession) {
         this.name = name;
         this.profession = profession;
-        this.minSalary = 100;
+        this.minSalary = 120;
     }
 
     @Override
     public String toString() {
 
-        return String.format("Master %s %s претендует на ЗП не менее %d тыс.руб. \n", profession, name, minSalary);
+        return String.format("Master %s %s претендует на ЗП не менее %.0f тыс.руб. \n", profession, name, minSalary);
     }
 
     @Override

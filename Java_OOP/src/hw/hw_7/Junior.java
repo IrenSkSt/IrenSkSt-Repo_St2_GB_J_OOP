@@ -29,7 +29,7 @@ public class Junior implements Obsever {
     @Override
     public String toString() {
 
-        return String.format("Junior %s %s претендует на ЗП не менее %d тыс.руб. \n", profession, name, minSalary);
+        return String.format("Junior %s %s претендует на ЗП не менее %.0f тыс.руб. \n", profession, name, minSalary);
     }
 
     @Override

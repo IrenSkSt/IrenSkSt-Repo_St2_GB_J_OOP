@@ -6,5 +6,7 @@ public interface Publisher {
 
     void removeObserver(Obsever obsever);
 
+    void showListObservers();
+
     void sendOffer(String nameCompany, PROFESSION profession, POSITION position, double salary);
 }

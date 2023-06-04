@@ -22,6 +22,8 @@ public class PlatformJobAgency {
         jobAgency.registerObserver(student1);
         jobAgency.registerObserver(master2);
 
+        jobAgency.showListObservers(); // для проверки
+
         /** Вакансии */
         // for (int i = 0; i < 10; i++) {
         // company1.needEmployee();
@@ -29,8 +31,10 @@ public class PlatformJobAgency {
         // company3.needEmployee();
         // }
 
+        System.out.println("Отклики соискателей по вакансия: ".toUpperCase());
         company1.createVacancy(PROFESSION.Project, POSITION.Entern);
         company1.createVacancy(PROFESSION.Programmer, POSITION.Junior);
+        company1.createVacancy(PROFESSION.Product, POSITION.Junior);
         company2.createVacancy(PROFESSION.Programmer, POSITION.Master);
         company2.createVacancy(PROFESSION.Programmer, POSITION.Junior);
         company2.createVacancy(PROFESSION.Project, POSITION.Entern);
@@ -38,6 +42,7 @@ public class PlatformJobAgency {
         company3.createVacancy(PROFESSION.Product, POSITION.Master);
         company3.createVacancy(PROFESSION.Programmer, POSITION.Master);
         company3.createVacancy(PROFESSION.Programmer, POSITION.Junior);
+        company3.createVacancy(PROFESSION.Programmer, POSITION.Entern);
 
     }
 
