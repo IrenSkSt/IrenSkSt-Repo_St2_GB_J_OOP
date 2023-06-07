@@ -12,6 +12,6 @@ public class Main {
         /**
          * !!! Это техническая переброска для удобства работы в структуре ДЗ по курсу
          */
-        OrderToProduct.createOrderProduct();// задача 1 ДЗ_6
+        // OrderToProduct.createOrderProduct();// задача 1 ДЗ_6
     }
 }
